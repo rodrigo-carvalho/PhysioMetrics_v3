@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sensor.TelaController">
+    <stylesheets>
+        <URL value="@tela.css" />
+    </stylesheets>
+   <children>
+      <VBox prefHeight="800.0" prefWidth="1200.0">
+         <children>
+            <TextField alignment="CENTER" text="Sistema de Captura de Dados Fisiológicos(SiCaDaFi)">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <HBox prefHeight="60.0" prefWidth="1200.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="114.0" text="Nome do Projeto :" />
+                  <TextField />
+                  <Label prefHeight="25.0" prefWidth="114.0" text="Nome da Coleta :" />
+                  <TextField />
+                  <Label prefHeight="25.0" prefWidth="114.0" text="Numero da Coleta:" />
+                  <TextField />
+                  <Label prefHeight="25.0" prefWidth="133.0" text="Nome do Pesquisador :" />
+                  <TextField />
+               </children>
+            </HBox>
+            <ImageView fx:id="currentFrame" fitHeight="300.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="52.0" text="Porta :" />
+                  <JFXComboBox />
+                  <Label prefHeight="25.0" prefWidth="55.0" text="Conectar:" />
+                  <JFXButton fx:id="buttonconectar" onAction="#startCamera" text="ok" />
+                  <Label prefHeight="25.0" prefWidth="51.0" text="Gravar :" />
+                  <JFXButton fx:id="buttongravar" onAction="#actionGravar" text="OK" />
+                  <Label prefHeight="25.0" text="Para" />
+                  <JFXButton fx:id="buttonparar" onAction="#actionParar" text="ok" />
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <LineChart>
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </children>
+            </VBox>
+         </children></VBox>
+   </children>
+</AnchorPane>
